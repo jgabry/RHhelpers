@@ -2,7 +2,7 @@ Package: RHhelpers
 Title: Convenience functions
 Version: 0.0.0.9000
 Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph)
+Description: Convenience functions for working with CPRC/RH survey data.
 Depends: R (>= 3.2.0), survey
 License: What license is it under?
 LazyData: true
