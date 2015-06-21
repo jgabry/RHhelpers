@@ -5,7 +5,7 @@
 \title{Save weights as .rds or .dta file}
 \usage{
 save_weights(data, format = c("rds", "dta"), file_name = paste0("weights.",
-  format), include_replicates = TRUE)
+  format), include_reps = TRUE)
 }
 \arguments{
 \item{data}{the \code{data.frame} to take the weights from.}
@@ -14,7 +14,7 @@ save_weights(data, format = c("rds", "dta"), file_name = paste0("weights.",
 
 \item{file_name}{the path to where the file should be saved.}
 
-\item{include_replicates}{logical. Should replicate weights by saved if found?}
+\item{include_reps}{logical. Should replicate weights by saved if found?}
 }
 \value{
 a .dta or .rds file, depending on \code{format}.
