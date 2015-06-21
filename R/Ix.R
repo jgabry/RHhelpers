@@ -1,7 +1,7 @@
 .conditions <- function(...) {
   as.list(substitute(list(...))[-1])
 }
-.NA_to_FALSE <- function(x) {
+.na_to_false <- function(x) {
   if (is.list(x)) {
     x <- lapply(seq_along(x), function(i) {
       xi <- x[[i]]
@@ -15,7 +15,7 @@
 }
 
 Ix <- function(conditions, and = TRUE, df = NULL,
-               NA_is_FALSE = FALSE,
+               na_is_false = FALSE,
                type = c("logical", "numeric", "integer")) {
 
   if (!is.list(conditions))
@@ -27,8 +27,8 @@ Ix <- function(conditions, and = TRUE, df = NULL,
   res <- lapply(conditions, eval, envir = df, enclos = parent.frame())
   L <- length(res)
 
-  if (NA_is_FALSE)
-    res <- .NA_to_FALSE(res)
+  if (na_is_false)
+    res <- .na_to_false(res)
 
   out <- rowSums(do.call(cbind, res)) == L
   if (as.type != "as.logical")

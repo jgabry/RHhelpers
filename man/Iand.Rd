@@ -5,10 +5,10 @@
 \alias{Ior}
 \title{Indicator variables}
 \usage{
-Iand(..., df = NULL, NA_is_FALSE = FALSE, type = c("logical", "numeric",
+Iand(..., df = NULL, na_is_false = FALSE, type = c("logical", "numeric",
   "integer"))
 
-Ior(..., df = NULL, NA_is_FALSE = FALSE, type = c("logical", "numeric",
+Ior(..., df = NULL, na_is_false = FALSE, type = c("logical", "numeric",
   "integer"))
 }
 \arguments{
@@ -16,30 +16,31 @@ Ior(..., df = NULL, NA_is_FALSE = FALSE, type = c("logical", "numeric",
 
 \item{df}{a \code{data.frame}.}
 
-\item{NA_is_FALSE}{logical. If \code{TRUE}, expressions in \code{...} that
-evaluate to \code{NA} will be treated as \code{FALSE}, and thus the returned
-vector will not contain any \code{NA} values. If \code{TRUE} then an \code{NA}
-will be returned whenever any of the expressions evaluates to \code{NA}. See
-Details.}
+\item{na_is_false}{logical. Treat \code{NA} values as false? If
+\code{TRUE}, expressions in \code{...} that evaluate to \code{NA} will be
+treated as false, and thus the returned vector will not contain any
+\code{NA} values. If \code{FALSE} then an \code{NA} will be returned
+whenever any of the expressions evaluates to \code{NA}. See Details and
+Examples.}
 
 \item{type}{The desired type for the result. One of \code{'logical'}
   (default), \code{'numeric'}, or \code{'integer'}.}
 }
 \value{
-A logical (default), numeric, or integer indicator variable, depending on
-the value of \code{type}.
+A logical (default), numeric, or integer indicator variable,
+  depending on the value of \code{type}.
 }
 \description{
-For \code{Iand} and \code{Ior} the expressions in \code{...}
-are linked by \code{&} and \code{|}, respectively.
+For \code{Iand} and \code{Ior} the expressions in \code{...} are linked by
+\code{&} and \code{|}, respectively.
 }
 \details{
 Suppose \code{x} and \code{y} are numeric vectors and \code{z} is
 a character vector. If any of the vectors contain \code{NA} values then
 
-\code{I_1 <- Iand(x < y, z == "A", df = data, NA_is_FALSE = TRUE)}
+\code{I_1 <- Iand(x < y, z == "A", df = data, na_is_false = TRUE)}
 
-\code{I_2 <- Iand(x < y, z == "A", df = data, NA_is_FALSE = FALSE)}
+\code{I_2 <- Iand(x < y, z == "A", df = data, na_is_false = FALSE)}
 
 are not the same. For example:
 
@@ -55,8 +56,8 @@ are not the same. For example:
 }
 \examples{
 data <- data.frame(x = 0, y = rep(c(1,-1), each = 3), z = rep(c('A','B',NA), 2))
-ex1 <- Iand(x < y, z == "A", df = data, NA_is_FALSE = TRUE)
-ex2 <- Iand(x < y, z == "A", df = data, NA_is_FALSE = FALSE)
+ex1 <- Iand(x < y, z == "A", df = data, na_is_false = TRUE)
+ex2 <- Iand(x < y, z == "A", df = data, na_is_false = FALSE)
 cbind(data, ex1, ex2)
 }
 
