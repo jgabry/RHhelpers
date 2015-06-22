@@ -29,8 +29,8 @@ Ix <- function(conditions, and = TRUE, df = NULL,
 
   if (na_is_false)
     res <- .na_to_false(res)
-
-  out <- rowSums(do.call(cbind, res)) == L
+  sums <- rowSums(do.call(cbind, res))
+  out <- if (and) sums == L else sums >= 1
   if (as.type != "as.logical")
     do.call(as.type, list(out))
   else
