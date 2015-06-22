@@ -16,12 +16,11 @@ Ior(..., df = NULL, na_is_false = FALSE, type = c("logical", "numeric",
 
 \item{df}{a \code{data.frame}.}
 
-\item{na_is_false}{logical. Treat \code{NA} values as false? If
-\code{TRUE}, expressions in \code{...} that evaluate to \code{NA} will be
-treated as false, and thus the returned vector will not contain any
-\code{NA} values. If \code{FALSE} then an \code{NA} will be returned
-whenever any of the expressions evaluates to \code{NA}. See Details and
-Examples.}
+\item{na_is_false}{logical. Treat \code{NA} values as false? If \code{TRUE},
+expressions in \code{...} that evaluate to \code{NA} will be treated as
+false, and thus the returned vector will not contain any \code{NA} values.
+If \code{FALSE} then an \code{NA} will be returned whenever any of the
+expressions evaluates to \code{NA}. See Details and Examples.}
 
 \item{type}{The desired type for the result. One of \code{'logical'}
   (default), \code{'numeric'}, or \code{'integer'}.}
@@ -43,7 +42,6 @@ a character vector. If any of the vectors contain \code{NA} values then
 \code{I_2 <- Iand(x < y, z == "A", df = data, na_is_false = FALSE)}
 
 are not the same. For example:
-
 \tabular{ccccccc}{
   \code{x < y}  \tab \code{z}  \tab\tab \code{I_1} \tab \code{I_2} \cr
   T  \tab A  \tab\tab  T \tab  T\cr
