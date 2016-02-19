@@ -7,8 +7,7 @@
 #' @examples
 #' cap(1:5, at = 2)
 cap <- function(x, at) {
-  stopifnot(is.numeric(x))
-  y <- x
-  y[y > at] <- at
-  y
+  stopifnot(is.numeric(x), is.numeric(at))
+  x[x > at] <- at
+  x
 }
