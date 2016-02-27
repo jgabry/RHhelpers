@@ -16,7 +16,7 @@ impute_continuous_from_category <- function(contvar, catvar, df, breaks) {
   cat_num <- as.numeric(df[[catvar]])
   ncats <- length(unique(na.omit(cat_num)))
   stopifnot(length(breaks) == ncats + 1)
-  for (j in seq_along(ncats)) {
+  for (j in 1:ncats) {
     catj <- !is.na(cat_num) & cat_num == j
     n <- sum(catj)
     impj <- runif(n, breaks[j], breaks[j + 1])
@@ -24,3 +24,4 @@ impute_continuous_from_category <- function(contvar, catvar, df, breaks) {
   }
   return(df)
 }
+
