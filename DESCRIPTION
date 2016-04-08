@@ -1,8 +1,8 @@
 Package: RHhelpers
-Title: Convenience functions
+Title: Helper functions for RH imputation and survey weighting
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: Convenience functions for working with CPRC/RH survey data.
+Authors@R: person("Jonah", "Gabry", email = "jsg2201@columbia.edu", role = c("aut", "cre"))
+Description: Helper functions for RH imputation and survey weighting.
 Depends:
     R (>= 3.2.0),
     survey

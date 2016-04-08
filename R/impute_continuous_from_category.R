@@ -1,17 +1,31 @@
-#' Impute continuous value given a bracket (i.e., bounds)
-#'
-#' Used for naive imputation of earnings (and income from other family members
-#' in HH) for respondents who provided a bracket but not the actual value. This
-#' draws a value from a uniform distribution with the bounds implied by the
-#' bracket.
+#' Naively impute continuous value given a bracket (i.e., bounds)
 #'
 #' @export
-#' @param contvar Name of the continuous variable with missing values
-#' @param catvar Name of the categorical variable indicating the bracket
-#' @param df The data frame in which to look for \code{contvar} and \code{catvar}
-#' @param breaks The breakpoints for all the brackets
-#' @return An updated version of \code{df} including the imputations
+#' @description Naive imputation of earnings (and income from other family
+#'   members in HH) for respondents who provided a bracket but not the actual
+#'   value. This draws a value from a uniform distribution with the bounds
+#'   implied by the bracket.
 #'
+#' @param df The data frame to use.
+#' @param contvars Character vector of names of the continuous variables with
+#'   missing values.
+#' @param catvars Character vector of names of categorical variables indicating
+#'   the bracket.
+#' @param breaks The breakpoints for all the brackets.
+#' @return An updated \code{df} including the imputations.
+#'
+naive_imputation_step <- function(df, contvars, catvars, breaks) {
+  stopifnot(length(contvars) == length(catvars), is.data.frame(df))
+  for (j in seq_along(contvars)) {
+    df <- impute_continuous_from_category(contvar = contvars[j],
+                                          catvar = catvars[j],
+                                          df = df,
+                                          breaks = breaks)
+  }
+  df
+}
+
+# internal function to do imps for a single contvar/catvar pair
 impute_continuous_from_category <- function(contvar, catvar, df, breaks) {
   cat_num <- as.numeric(df[[catvar]])
   ncats <- length(unique(na.omit(cat_num)))
@@ -24,4 +38,5 @@ impute_continuous_from_category <- function(contvar, catvar, df, breaks) {
   }
   return(df)
 }
+
 
