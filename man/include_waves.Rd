@@ -8,7 +8,7 @@ in later survey waves}
 include_waves(vars, waves = NULL)
 }
 \arguments{
-\item{vars}{A character vector of variable names}
+\item{vars}{A character vector of (baseline) variable names}
 
 \item{waves}{A numeric vector of survey wave numbers}
 }

@@ -4,7 +4,7 @@
 \alias{imp_varlist}
 \title{Create imputation information list}
 \usage{
-imp_varlist(vars, types, bounds = list(), include_q4 = FALSE)
+imp_varlist(vars, types, bounds = list(), waves = NULL)
 }
 \arguments{
 \item{vars}{Character vector of variable names}
@@ -13,7 +13,8 @@ imp_varlist(vars, types, bounds = list(), include_q4 = FALSE)
 
 \item{bounds}{List of bounds, or NAs. E.g. list(NA, NA, NA, c(0, Inf))}
 
-\item{include_q4}{Should the q4 versions of vars be included?}
+\item{waves}{A numeric vector of survey wave numbers indicating waves to
+include in addition to baseline}
 }
 \value{
 A list containing info on the type of variable and any bounds

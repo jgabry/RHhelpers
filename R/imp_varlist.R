@@ -4,17 +4,19 @@
 #' @param vars Character vector of variable names
 #' @param types Character vector of variable types
 #' @param bounds List of bounds, or NAs. E.g. list(NA, NA, NA, c(0, Inf))
-#' @param include_q4 Should the q4 versions of vars be included?
+#' @param waves A numeric vector of survey wave numbers indicating waves to
+#'   include in addition to baseline
 #' @return A list containing info on the type of variable and any bounds
 #'
-imp_varlist <- function(vars, types, bounds = list(), include_q4 = FALSE) {
+imp_varlist <- function(vars, types, bounds = list(), waves = NULL) {
   stopifnot(length(vars) == length(types) && length(vars) == length(bounds))
   L <- length(vars)
-  if (include_q4) {
-    L <- 2 * L
-    vars <- c(vars, paste0("q4", vars))
-    types <- rep(types, 2)
-    bounds <- rep(bounds, 2)
+  if (!is.null(waves)) {
+    W <- 1 + length(waves)
+    L <- L * W
+    vars <- include_waves(vars, waves)
+    types <- rep(types, W)
+    bounds <- rep(bounds, W)
   }
   varlist <- setNames(vector(mode = "list", length = L), nm = vars)
   for (j in seq_along(varlist)) {
