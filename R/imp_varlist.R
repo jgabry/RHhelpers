@@ -8,19 +8,19 @@
 #'   include in addition to baseline
 #' @return A list containing info on the type of variable and any bounds
 #'
-imp_varlist <- function(vars, types, bounds = list(), waves = NULL) {
+imp_varlist <- function(vars, types, bounds = list(), waves = 0) {
   stopifnot(length(vars) == length(types) && length(vars) == length(bounds))
   L <- length(vars)
-  if (!is.null(waves)) {
-    W <- 1 + length(waves)
+  if (!all(waves == 0)) {
+    W <- length(waves)
     L <- L * W
     vars <- include_waves(vars, waves)
     types <- rep(types, W)
     bounds <- rep(bounds, W)
   }
   varlist <- setNames(vector(mode = "list", length = L), nm = vars)
-  for (j in seq_along(varlist)) {
+  for (j in seq_along(varlist))
     varlist[[j]] <- list(type = types[j], bounds = bounds[[j]])
-  }
+
   return(varlist)
 }
