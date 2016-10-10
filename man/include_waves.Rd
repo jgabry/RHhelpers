@@ -2,22 +2,22 @@
 % Please edit documentation in R/include_waves.R
 \name{include_waves}
 \alias{include_waves}
-\title{Add to vector of baseline variable names the names of corresponding variables
-in later survey waves}
+\title{Take baseline variable names and return variable names for baseline and/or
+later waves}
 \usage{
-include_waves(vars, waves = NULL)
+include_waves(vars, waves = 0)
 }
 \arguments{
 \item{vars}{A character vector of (baseline) variable names}
 
-\item{waves}{A numeric vector of survey wave numbers}
+\item{waves}{A numeric vector of survey wave numbers (0 for baseline)}
 }
 \value{
 \code{vars} updated to include the the names of the corresponding
   variables in the waves indicated by \code{waves}.
 }
 \description{
-Add to vector of baseline variable names the names of corresponding variables
-in later survey waves
+Take baseline variable names and return variable names for baseline and/or
+later waves
 }
 

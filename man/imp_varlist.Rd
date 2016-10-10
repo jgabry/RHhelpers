@@ -4,7 +4,7 @@
 \alias{imp_varlist}
 \title{Create imputation information list}
 \usage{
-imp_varlist(vars, types, bounds = list(), waves = NULL)
+imp_varlist(vars, types, bounds = list(), waves = 0)
 }
 \arguments{
 \item{vars}{Character vector of variable names}
