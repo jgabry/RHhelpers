@@ -7,11 +7,11 @@
 bounds_matrix(varlist)
 }
 \arguments{
-\item{varlist}{list returned by \code{\link{imp_varlist}}}
+\item{varlist}{A list returned by \code{\link{imp_varlist}}.}
 }
 \value{
-A matrix that can be passed to the \code{bounds} argument of
-  \code{amelia()}.
+A matrix that can be passed to the \code{bounds} argument of the
+  \code{\link[Amelia]{amelia}} function.
 }
 \description{
 Make bounds matrix for amelia

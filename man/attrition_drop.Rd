@@ -15,7 +15,7 @@ attrition_drop(imp_df, wave, wave_indicator)
 TRUE if the respondent is in the wave and FALSE if not.}
 }
 \value{
-Updated \code{imp_df}
+Updated \code{imp_df}.
 }
 \description{
 Replace imputations with NAs if respondent did not participate in a survey wave

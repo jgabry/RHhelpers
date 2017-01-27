@@ -10,11 +10,22 @@ cut_numeric_leftclosed(x, breaks)
 \item{x, breaks}{same as \code{\link[base]{cut}}.}
 }
 \value{
-an integer vector of level codes.
+An integer vector of level codes. As with \code{cut}, values which
+  fall outside the range of breaks are coded as NA (as are NaN and NA
+  values).
 }
 \description{
-Integer codes are returned instead of a factor. Intervals closed on left and 
+Integer codes are returned instead of a factor. Intervals closed on left and
 open on right.
+}
+\examples{
+x <- 1:10
+y <- cut_numeric_leftclosed(x, breaks = c(0, 2, 7))
+cbind(x, y)
+
+z <- cut_numeric_leftclosed(x, breaks = c(1, 2, 7, Inf))
+cbind(x, z)
+
 }
 \seealso{
 \code{\link[base]{cut}}

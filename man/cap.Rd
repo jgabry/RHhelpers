@@ -2,7 +2,7 @@
 % Please edit documentation in R/cap.R
 \name{cap}
 \alias{cap}
-\title{Cap}
+\title{Set all elements of a vector or matrix above a certain value to that value}
 \usage{
 cap(x, at)
 }
@@ -15,7 +15,7 @@ cap(x, at)
 \code{x} but with values greater than \code{at} set equal to \code{at}
 }
 \description{
-Cap
+Set all elements of a vector or matrix above a certain value to that value
 }
 \examples{
 cap(1:5, at = 2)

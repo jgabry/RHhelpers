@@ -2,24 +2,30 @@
 % Please edit documentation in R/imp_varlist.R
 \name{imp_varlist}
 \alias{imp_varlist}
-\title{Create imputation information list}
+\title{Create list of information about variables to be imputed}
 \usage{
 imp_varlist(vars, types, bounds = list(), waves = 0)
 }
 \arguments{
-\item{vars}{Character vector of variable names}
+\item{vars}{Character vector of variable names.}
 
-\item{types}{Character vector of variable types}
+\item{types}{Character vector of variable types. Can include \code{"num"}
+(numeric), \code{"ordinal"}, \code{"nominal"}, \code{"binary"}.}
 
-\item{bounds}{List of bounds, or NAs. E.g. list(NA, NA, NA, c(0, Inf))}
+\item{bounds}{List of bounds, or NAs. For example, \code{list(NA, NA, NA,
+c(0, Inf))} if there are four variables and the first three are unbounded
+and the fourth is non-negative.}
 
 \item{waves}{A numeric vector of survey wave numbers indicating waves to
-include in addition to baseline}
+include in addition to baseline. The default \code{0} just includes
+baseline.}
 }
 \value{
-A list containing info on the type of variable and any bounds
+A list containing info on the type of variable and any bounds. This
+  information is later used when setting up the arguments to pass to the
+  the Amelia package for imputation.
 }
 \description{
-Create imputation information list
+Create list of information about variables to be imputed
 }
 

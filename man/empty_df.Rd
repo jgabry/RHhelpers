@@ -2,7 +2,7 @@
 % Please edit documentation in R/empty_df.R
 \name{empty_df}
 \alias{empty_df}
-\title{Placeholder NA-filled data.frame}
+\title{Create a placeholder NA-filled data.frame}
 \usage{
 empty_df(nrow, ncol)
 }
@@ -13,6 +13,11 @@ empty_df(nrow, ncol)
 an \code{nrow} by \code{ncol} \code{data.frame} of NAs.
 }
 \description{
-Placeholder NA-filled data.frame
+Create a placeholder NA-filled data.frame
+}
+\examples{
+d <- empty_df(3, 2)
+print(d)
+
 }
 

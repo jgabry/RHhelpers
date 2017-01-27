@@ -1,4 +1,4 @@
-#' Cap
+#' Set all elements of a vector or matrix above a certain value to that value
 #'
 #' @export
 #' @param x A numeric vector or matrix.

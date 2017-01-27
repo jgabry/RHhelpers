@@ -1,12 +1,18 @@
-#' Create imputation information list
+#' Create list of information about variables to be imputed
 #'
 #' @export
-#' @param vars Character vector of variable names
-#' @param types Character vector of variable types
-#' @param bounds List of bounds, or NAs. E.g. list(NA, NA, NA, c(0, Inf))
+#' @param vars Character vector of variable names.
+#' @param types Character vector of variable types. Can include \code{"num"}
+#'   (numeric), \code{"ordinal"}, \code{"nominal"}, \code{"binary"}.
+#' @param bounds List of bounds, or NAs. For example, \code{list(NA, NA, NA,
+#'   c(0, Inf))} if there are four variables and the first three are unbounded
+#'   and the fourth is non-negative.
 #' @param waves A numeric vector of survey wave numbers indicating waves to
-#'   include in addition to baseline
-#' @return A list containing info on the type of variable and any bounds
+#'   include in addition to baseline. The default \code{0} just includes
+#'   baseline.
+#' @return A list containing info on the type of variable and any bounds. This
+#'   information is later used when setting up the arguments to pass to the
+#'   the Amelia package for imputation.
 #'
 imp_varlist <- function(vars, types, bounds = list(), waves = 0) {
   stopifnot(length(vars) == length(types) && length(vars) == length(bounds))

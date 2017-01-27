@@ -2,12 +2,13 @@
 % Please edit documentation in R/amelia2df.R
 \name{amelia2df}
 \alias{amelia2df}
-\title{Retrieve an imputed dataset from an amelia object as a data frame}
+\title{Retrieve an imputed dataset (as a data frame) from an amelia object}
 \usage{
 amelia2df(x, which_imp = 1)
 }
 \arguments{
-\item{x}{An object of class \code{"amelia"}}
+\item{x}{An object of class \code{"amelia"} obtained from running
+the \code{\link[Amelia]{amelia}} function.}
 
 \item{which_imp}{If \code{x} contains multiple imputed datasets (i.e., if
 \code{m} argument to \code{amelia} was greater than 1), which of the
@@ -17,6 +18,6 @@ imputed datasets should be returned?}
 A data.frame
 }
 \description{
-Retrieve an imputed dataset from an amelia object as a data frame
+Retrieve an imputed dataset (as a data frame) from an amelia object
 }
 

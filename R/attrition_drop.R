@@ -5,7 +5,7 @@
 #' @param wave The wave number
 #' @param wave_indicator A logical vector. Each element should be
 #'   TRUE if the respondent is in the wave and FALSE if not.
-#' @return Updated \code{imp_df}
+#' @return Updated \code{imp_df}.
 #'
 attrition_drop <- function(imp_df, wave, wave_indicator) {
   stopifnot(is.numeric(wave), is.logical(wave_indicator))

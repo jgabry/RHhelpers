@@ -1,9 +1,9 @@
 #' Make bounds matrix for amelia
 #'
 #' @export
-#' @param varlist list returned by \code{\link{imp_varlist}}
-#' @return A matrix that can be passed to the \code{bounds} argument of
-#'   \code{amelia()}.
+#' @param varlist A list returned by \code{\link{imp_varlist}}.
+#' @return A matrix that can be passed to the \code{bounds} argument of the
+#'   \code{\link[Amelia]{amelia}} function.
 #'
 bounds_matrix <- function(varlist) {
   bounds <- lapply(varlist, "[[", "bounds")
