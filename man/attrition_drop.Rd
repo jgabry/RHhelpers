@@ -20,4 +20,3 @@ Updated \code{imp_df}.
 \description{
 Replace imputations with NAs if respondent did not participate in a survey wave
 }
-

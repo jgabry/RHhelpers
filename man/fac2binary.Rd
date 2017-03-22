@@ -15,4 +15,3 @@ fac2binary(x)
 \description{
 Convert 2-level factor variable to a binary 0/1 variable
 }
-

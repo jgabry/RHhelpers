@@ -15,4 +15,3 @@ A one column matrix of 1s with \code{sample_size} rows.
 \description{
 Make a one-column matrix of 1s
 }
-

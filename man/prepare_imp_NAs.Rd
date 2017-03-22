@@ -19,4 +19,3 @@ A modified version of df with all flagged values of vars made NA
 \description{
 Make all values of vars with imputation flag = 1 into NAs
 }
-

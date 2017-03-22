@@ -18,4 +18,3 @@ survey_summary(x, which = "mean", design, msg = NULL)
 \description{
 Print survey summary statistics
 }
-

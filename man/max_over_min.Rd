@@ -15,4 +15,3 @@ max_over_min(x)
 \description{
 Ratio of maximum to minimum
 }
-

@@ -21,4 +21,3 @@ A vector of length \code{n}.
 \description{
 Wrapper for \code{\link[base]{sample}}
 }
-

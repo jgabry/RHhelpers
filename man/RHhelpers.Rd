@@ -8,4 +8,3 @@
 \description{
 Convenience functions for working with CPRC/RH survey data
 }
-

@@ -20,4 +20,3 @@ A data.frame
 \description{
 Retrieve an imputed dataset (as a data frame) from an amelia object
 }
-

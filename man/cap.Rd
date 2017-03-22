@@ -20,4 +20,3 @@ Set all elements of a vector or matrix above a certain value to that value
 \examples{
 cap(1:5, at = 2)
 }
-

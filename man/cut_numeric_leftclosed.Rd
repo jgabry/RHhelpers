@@ -30,4 +30,3 @@ cbind(x, z)
 \seealso{
 \code{\link[base]{cut}}
 }
-

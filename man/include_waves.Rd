@@ -20,4 +20,3 @@ include_waves(vars, waves = 0)
 Take baseline variable names and return variable names for baseline and/or
 later waves
 }
-

@@ -19,4 +19,3 @@ corresponding to the imputation flag variables.}
 This function takes a data.frame \code{df} and converts all \code{NA}s in
 the imputation flag variables to zeros.
 }
-

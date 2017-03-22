@@ -17,4 +17,3 @@ a vector that sums to \code{pop_size}
 \description{
 Rescale weights to sum to population
 }
-

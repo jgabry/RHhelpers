@@ -26,4 +26,3 @@ Naive imputation of earnings (and income from other family
   value. This draws a value from a uniform distribution with the bounds
   implied by the bracket.
 }
-

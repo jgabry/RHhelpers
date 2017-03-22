@@ -3,7 +3,8 @@
 #' @export
 #' @param vars Character vector of variable names.
 #' @param types Character vector of variable types. Can include \code{"num"}
-#'   (numeric), \code{"ordinal"}, \code{"nominal"}, \code{"binary"}.
+#'   (numeric), \code{"int"} (interger), \code{"ordinal"}, \code{"nominal"},
+#'   \code{"binary"}.
 #' @param bounds List of bounds, or NAs. For example, \code{list(NA, NA, NA,
 #'   c(0, Inf))} if there are four variables and the first three are unbounded
 #'   and the fourth is non-negative.

@@ -15,4 +15,3 @@ cv(x)
 \description{
 Coefficient of variation
 }
-

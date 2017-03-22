@@ -16,4 +16,3 @@ A matrix that can be passed to the \code{bounds} argument of the
 \description{
 Make bounds matrix for amelia
 }
-

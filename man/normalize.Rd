@@ -15,4 +15,3 @@ normalize(x)
 \description{
 Normalize to have mean 1
 }
-

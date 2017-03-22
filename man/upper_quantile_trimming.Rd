@@ -19,4 +19,3 @@ See \code{\link[survey]{trimWeights}}
 \description{
 Wrapper for \code{\link[survey]{trimWeights}}
 }
-

@@ -29,4 +29,3 @@ A list with components \code{samp} and \code{pop}. \code{samp} is a
 This function can be used to construct the \code{sample.margins} and
 \code{population.margins} arguments for \code{\link[survey]{rake}}
 }
-

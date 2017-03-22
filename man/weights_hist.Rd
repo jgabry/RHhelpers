@@ -14,4 +14,3 @@ weights_hist(w, title = NULL)
 \description{
 Histogram of weights
 }
-

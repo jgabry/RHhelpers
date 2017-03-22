@@ -17,4 +17,3 @@ mean_plus_sds(x, k)
 \description{
 Mean plus \eqn{k} standard deviations
 }
-

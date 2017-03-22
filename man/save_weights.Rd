@@ -22,4 +22,3 @@ a .dta or .rds file, depending on \code{format}.
 \description{
 This will save all variables with names containing 'weight_'
 }
-

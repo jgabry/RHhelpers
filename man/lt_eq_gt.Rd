@@ -29,4 +29,3 @@ y1 <- 1:10
 y2 <- lt_eq_gt(y1, compare_to = 5)
 
 }
-

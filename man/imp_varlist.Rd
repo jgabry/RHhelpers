@@ -10,7 +10,8 @@ imp_varlist(vars, types, bounds = list(), waves = 0)
 \item{vars}{Character vector of variable names.}
 
 \item{types}{Character vector of variable types. Can include \code{"num"}
-(numeric), \code{"ordinal"}, \code{"nominal"}, \code{"binary"}.}
+(numeric), \code{"int"} (interger), \code{"ordinal"}, \code{"nominal"},
+\code{"binary"}.}
 
 \item{bounds}{List of bounds, or NAs. For example, \code{list(NA, NA, NA,
 c(0, Inf))} if there are four variables and the first three are unbounded
@@ -28,4 +29,3 @@ A list containing info on the type of variable and any bounds. This
 \description{
 Create list of information about variables to be imputed
 }
-

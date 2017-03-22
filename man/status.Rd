@@ -12,4 +12,3 @@ status(msg)
 \description{
 Print status messages
 }
-

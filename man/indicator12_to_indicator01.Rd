@@ -18,4 +18,3 @@ indicator12_to_indicator01(vars, df)
 \description{
 Convert (one or more) 1/2 indicator variables to 0/1 indicator variables
 }
-
