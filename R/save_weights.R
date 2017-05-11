@@ -26,7 +26,7 @@ save_weights <- function(data, format = c("rds","dta"),
       weight_cols <- weight_cols[-rep_cols]
   }
   weights <- subset(data, sel = c("subject_id", weight_cols))
-  weights <- plyr::arrange(weights, subject_id)
+  weights <- dplyr::arrange(weights, subject_id)
   cat(paste0("Writing file '", file_name, "'"))
 
   if (format == "rds") {
