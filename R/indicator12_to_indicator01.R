@@ -1,4 +1,6 @@
-#' Convert (one or more) 1/2 indicator variables to 0/1 indicator variables
+#' Convert (one or more) 1/2 indicator variables to 1/0 indicator variables
+#'
+#' NOTE: This converts the 2s to 0s and leaves the 1s and 1s!!
 #'
 #' @export
 #' @param vars A character vector of variable names

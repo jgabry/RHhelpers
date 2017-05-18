@@ -1,7 +1,7 @@
 #' Sample and population margins for raking
 #'
 #' This function can be used to construct the \code{sample.margins} and
-#' \code{population.margins} arguments for \code{\link[survey]{rake}}
+#' \code{population.margins} arguments for \code{\link[survey]{rake}}.
 #'
 #' @export
 #' @param me_vars character vector of variable names for main effects.

@@ -1,4 +1,4 @@
-#' Make bounds matrix for amelia
+#' Make bounds matrix for Amelia
 #'
 #' @export
 #' @param varlist A list returned by \code{\link{imp_varlist}}.

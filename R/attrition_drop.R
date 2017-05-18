@@ -1,4 +1,4 @@
-#' Replace imputations with NAs if respondent did not participate in a survey wave
+#' Replace values with NAs if respondent did not participate in a survey wave
 #'
 #' @export
 #' @param imp_df Data frame from after imputation

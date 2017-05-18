@@ -22,7 +22,7 @@ naive_imputation_step <- function(df, contvars, catvars, breaks) {
                                           df = df,
                                           breaks = breaks)
   }
-  df
+  return(df)
 }
 
 # internal function to do imps for a single contvar/catvar pair

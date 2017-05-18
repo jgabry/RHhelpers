@@ -15,3 +15,7 @@ fac2binary(x)
 \description{
 Convert 2-level factor variable to a binary 0/1 variable
 }
+\examples{
+fac2binary(factor(c("a", "b", "a", "b")))
+
+}

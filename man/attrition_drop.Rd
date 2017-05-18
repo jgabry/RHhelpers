@@ -2,7 +2,7 @@
 % Please edit documentation in R/attrition_drop.R
 \name{attrition_drop}
 \alias{attrition_drop}
-\title{Replace imputations with NAs if respondent did not participate in a survey wave}
+\title{Replace values with NAs if respondent did not participate in a survey wave}
 \usage{
 attrition_drop(imp_df, wave, wave_indicator)
 }
@@ -18,5 +18,5 @@ TRUE if the respondent is in the wave and FALSE if not.}
 Updated \code{imp_df}.
 }
 \description{
-Replace imputations with NAs if respondent did not participate in a survey wave
+Replace values with NAs if respondent did not participate in a survey wave
 }

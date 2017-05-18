@@ -2,7 +2,7 @@
 % Please edit documentation in R/indicator12_to_indicator01.R
 \name{indicator12_to_indicator01}
 \alias{indicator12_to_indicator01}
-\title{Convert (one or more) 1/2 indicator variables to 0/1 indicator variables}
+\title{Convert (one or more) 1/2 indicator variables to 1/0 indicator variables}
 \usage{
 indicator12_to_indicator01(vars, df)
 }
@@ -16,5 +16,5 @@ indicator12_to_indicator01(vars, df)
   variables)
 }
 \description{
-Convert (one or more) 1/2 indicator variables to 0/1 indicator variables
+NOTE: This converts the 2s to 0s and leaves the 1s and 1s!!
 }

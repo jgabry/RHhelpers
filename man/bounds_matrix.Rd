@@ -2,7 +2,7 @@
 % Please edit documentation in R/bounds_matrix.R
 \name{bounds_matrix}
 \alias{bounds_matrix}
-\title{Make bounds matrix for amelia}
+\title{Make bounds matrix for Amelia}
 \usage{
 bounds_matrix(varlist)
 }
@@ -14,5 +14,5 @@ A matrix that can be passed to the \code{bounds} argument of the
   \code{\link[Amelia]{amelia}} function.
 }
 \description{
-Make bounds matrix for amelia
+Make bounds matrix for Amelia
 }

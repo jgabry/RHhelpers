@@ -3,6 +3,8 @@
 #' @export
 #' @param x A 2-level factor variable
 #' @return \code{x}, converted to a binary variable
+#' @examples
+#' fac2binary(factor(c("a", "b", "a", "b")))
 #'
 fac2binary <- function(x) {
   stopifnot(is.factor(x), length(levels(x)) == 2L)
