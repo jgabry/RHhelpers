@@ -4,8 +4,8 @@
 \alias{save_weights}
 \title{Save weights as .rds or .dta file}
 \usage{
-save_weights(data, format = c("rds", "dta"), file_name = paste0("weights.",
-  format), include_reps = TRUE)
+save_weights(data, format = c("rds", "dta"),
+  file_name = paste0("weights.", format), include_reps = TRUE)
 }
 \arguments{
 \item{data}{the \code{data.frame} to take the weights from.}
