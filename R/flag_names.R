@@ -25,7 +25,7 @@ flag_names <- function(vars, flag = "pimp.", waves = 1:12) {
   wave_vars <- paste0("q", waves)
   flags <- list()
   for (j in seq_along(vars)) {
-    w <- which(wave_vars == paste0('q',gsub("[^0-9]", "",  vars[j])))
+    w <- which(wave_vars == paste0('q',gsub("[^0-9]", "",  substr(vars[j],1,3))))
     if (!length(w)) {
       flags[[j]] <- paste0(flag, vars[j])
     } else {
