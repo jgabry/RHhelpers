@@ -4,7 +4,7 @@
 \alias{prepare_imp_NAs}
 \title{Make all values of vars with imputation flag = 1 into NAs}
 \usage{
-prepare_imp_NAs(df, vars, flag = "pimp.", waves = 1:8)
+prepare_imp_NAs(df, vars, flag = "pimp.", waves = 1:12)
 }
 \arguments{
 \item{df}{The data.frame to use}

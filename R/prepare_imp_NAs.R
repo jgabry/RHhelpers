@@ -6,7 +6,7 @@
 #' @param flag,waves See \code{\link{flag_names}}
 #' @return A modified version of df with all flagged values of vars made NA
 #'
-prepare_imp_NAs <- function(df, vars, flag = "pimp.", waves = 1:8) {
+prepare_imp_NAs <- function(df, vars, flag = "pimp.", waves = 1:12) {
   # get names of imputation flag variables
   flags <- flag_names(vars, flag = flag, waves = waves)
 

@@ -17,7 +17,7 @@
 #' flag_names(vars)
 #' flag_names(vars, waves = 4) # q8 vars treated like baseline because 8 not in waves
 #'
-flag_names <- function(vars, flag = "pimp.", waves = 1:8) {
+flag_names <- function(vars, flag = "pimp.", waves = 1:12) {
   if (!is.numeric(waves)) {
     return(paste0(flag, vars))
   }
@@ -25,7 +25,7 @@ flag_names <- function(vars, flag = "pimp.", waves = 1:8) {
   wave_vars <- paste0("q", waves)
   flags <- list()
   for (j in seq_along(vars)) {
-    w <- which(wave_vars == substr(vars[j], 1, 2))
+    w <- which(wave_vars == paste0('q',gsub("[^0-9]", "",  vars[j])))
     if (!length(w)) {
       flags[[j]] <- paste0(flag, vars[j])
     } else {
