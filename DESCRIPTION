@@ -13,5 +13,7 @@ Imports:
     mice,
     parallel,
     plyr
-Suggests: Amelia
+Suggests: 
+    Amelia,
+    testthat
 RoxygenNote: 6.1.1

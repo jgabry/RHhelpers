@@ -5,12 +5,14 @@
 \title{Take baseline variable names and return variable names for baseline and/or
 later waves}
 \usage{
-include_waves(vars, waves = 0)
+include_waves(vars, waves = 0, year = NA)
 }
 \arguments{
 \item{vars}{A character vector of (baseline) variable names}
 
 \item{waves}{A numeric vector of survey wave numbers (0 for baseline)}
+
+\item{year}{A numeric integer of the year of survey collection}
 }
 \value{
 \code{vars} updated to include the the names of the corresponding

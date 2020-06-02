@@ -4,7 +4,7 @@
 \alias{flag_names}
 \title{Get names of imputation flag variables}
 \usage{
-flag_names(vars, flag = "pimp.", waves = 1:12)
+flag_names(vars, flag = "pimp.", waves = 1:12, year = NA)
 }
 \arguments{
 \item{vars}{Character vector of variable names}

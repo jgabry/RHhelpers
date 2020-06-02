@@ -4,7 +4,7 @@
 \alias{imp_varlist}
 \title{Create list of information about variables to be imputed}
 \usage{
-imp_varlist(vars, types, bounds = list(), waves = 0)
+imp_varlist(vars, types, bounds = list(), waves = 0, year = NA)
 }
 \arguments{
 \item{vars}{Character vector of variable names.}

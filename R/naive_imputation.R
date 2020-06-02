@@ -15,6 +15,12 @@
 #' @return An updated \code{df} including the imputations.
 #'
 naive_imputation_step <- function(df, contvars, catvars, breaks) {
+  if(any(!contvars %in% colnames(df))){
+    stop("Missing variables in contvars")
+  }
+  if(any(!catvars %in% colnames(df))){
+    stop("Missing variables in catvars")
+  }
   stopifnot(length(contvars) == length(catvars), is.data.frame(df))
   for (j in seq_along(contvars)) {
     df <- impute_continuous_from_category(contvar = contvars[j],

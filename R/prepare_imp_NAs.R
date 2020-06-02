@@ -8,7 +8,22 @@
 #'
 prepare_imp_NAs <- function(df, vars, flag = "pimp.", waves = 1:12) {
   # get names of imputation flag variables
-  flags <- flag_names(vars, flag = flag, waves = waves)
+  # split vars into cross-sectional and longitudinal formats:
+  c_vars <- vars[grep('^y(\\d{2})',vars)] #cross-section var names
+  if(length(c_vars)){
+    l_vars <- vars[grep('^y(\\d{2})',vars,invert=TRUE)] #longitudinal var names
+    c_flags <- flag_names(c_vars, flag = flag, waves = waves, year = 15:20)
+    if(length(l_vars)){
+      l_flags <- flag_names(l_vars, flag = flag, waves = waves, year = NA)
+      flags <- c(l_flags,c_flags)
+      vars <- c(l_vars,c_vars) #need to be matched in location to flags
+    }
+    flags <- c_flags
+    vars <- c_vars
+  }else{
+    flags <- flag_names(vars, flag = flag, waves = waves, year = NA)
+  }
+
 
   # check for variables not found
   all_nms <- c(vars, flags)

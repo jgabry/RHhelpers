@@ -15,19 +15,35 @@
 #'   information is later used when setting up the arguments to pass to the
 #'   the Amelia package for imputation.
 #'
-imp_varlist <- function(vars, types, bounds = list(), waves = 0) {
+imp_varlist <- function(vars, types, bounds = list(), waves = 0, year = NA) {
   stopifnot(length(vars) == length(types) && length(vars) == length(bounds))
+  if(!all(length(NA)==1)) stop("Can only impute one year at a time")
   L <- length(vars)
-  if (!all(waves == 0)) {
-    W <- length(waves)
-    L <- L * W
-    vars <- include_waves(vars, waves)
-    types <- rep(types, W)
-    bounds <- rep(bounds, W)
+  if(is.na(year)){
+    print("Assuming longitudinal naming convention")
+    if (!all(waves == 0)) {
+      W <- length(waves)
+      L <- L * W
+      vars <- include_waves(vars, waves)
+      types <- rep(types, W)
+      bounds <- rep(bounds, W)
+    }
+    varlist <- setNames(vector(mode = "list", length = L), nm = vars)
+    for (j in seq_along(varlist))
+      varlist[[j]] <- list(type = types[j], bounds = bounds[[j]])
+  } else{
+      print("Assuming harmonized naming convention")
+      if(any(waves==0)) stop("Naming covention for harmonized convention names first wave as 1")
+      if (!all(waves == 0)) {
+        W <- length(waves)
+        L <- L * W
+        vars <- include_waves(vars, waves, year)
+        types <- rep(types, W)
+        bounds <- rep(bounds, W)
+      }
+      varlist <- setNames(vector(mode = "list", length = L), nm = vars)
+      for (j in seq_along(varlist))
+        varlist[[j]] <- list(type = types[j], bounds = bounds[[j]])
   }
-  varlist <- setNames(vector(mode = "list", length = L), nm = vars)
-  for (j in seq_along(varlist))
-    varlist[[j]] <- list(type = types[j], bounds = bounds[[j]])
-
   return(varlist)
 }

@@ -17,21 +17,41 @@
 #' flag_names(vars)
 #' flag_names(vars, waves = 4) # q8 vars treated like baseline because 8 not in waves
 #'
-flag_names <- function(vars, flag = "pimp.", waves = 1:12) {
+flag_names <- function(vars, flag = "pimp.", waves = 1:12, year = NA) {
+  if(is.null(vars)){
+    stop("vars should not be empty")
+  }
   if (!is.numeric(waves)) {
     return(paste0(flag, vars))
   }
-
-  wave_vars <- paste0("q", waves)
-  flags <- list()
-  for (j in seq_along(vars)) {
-    w <- which(wave_vars == paste0('q',gsub("[^0-9]", "",  substr(vars[j],1,3))))
-    if (!length(w)) {
-      flags[[j]] <- paste0(flag, vars[j])
-    } else {
-      patt <- wave_vars[w]
-      repl <- paste0(wave_vars[w], flag)
-      flags[[j]] <- sub(patt, repl, vars[j])
+  if(any(is.na(year))){
+    print("Assuming longitudinal naming convention")
+    wave_vars <- paste0("q", waves)
+    flags <- list()
+    for (j in seq_along(vars)) {
+      w <- which(wave_vars == paste0('q',gsub("[^0-9]", "",  substr(vars[j],1,3))))
+      if (!length(w)) {
+        flags[[j]] <- paste0(flag, vars[j])
+      } else {
+        patt <- wave_vars[w]
+        repl <- paste0(wave_vars[w], flag)
+        flags[[j]] <- sub(patt, repl, vars[j])
+      }
+    }
+  }else {
+    print("Assuming harmonized naming convention")
+    wave_vars <- paste0("y",rep(year, each = length(waves)), "_q", waves, sep = "")
+    flags <- list()
+    for (j in seq_along(vars)) {
+      w <- which(wave_vars == substr(vars[j],1,6))
+      if (!length(w)) {
+        print("Not using year or wave information to flag")
+        flags[[j]] <- paste0(flag, vars[j])
+      } else {
+        patt <- wave_vars[w]
+        repl <- paste0(wave_vars[w], flag)
+        flags[[j]] <- sub(patt, repl, vars[j])
+      }
     }
   }
   unlist(flags)
