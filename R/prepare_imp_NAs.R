@@ -12,7 +12,7 @@ prepare_imp_NAs <- function(df, vars, flag = "pimp.", waves = 1:12) {
   c_vars <- vars[grep('^y(\\d{2})',vars)] #cross-section var names
   if(length(c_vars)){
     l_vars <- vars[grep('^y(\\d{2})',vars,invert=TRUE)] #longitudinal var names
-    c_flags <- flag_names(c_vars, flag = flag, waves = waves, year = 15:20)
+    c_flags <- flag_names(c_vars, flag = flag, waves = waves, year = 15:22)
     if(length(l_vars)){
       l_flags <- flag_names(l_vars, flag = flag, waves = waves, year = NA)
       flags <- c(l_flags,c_flags)
